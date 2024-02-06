@@ -2,12 +2,21 @@ import React from "react";
 import { DropdownProvider, useDropdown } from "./DropdownContext";
 
 const DropdownButton = () => {
-  return <button>Dropdown Button</button>;
+  return (
+    <button
+      onClick={() => {
+        const UL = document.getElementsByClassName("on");
+        console.log(UL);
+      }}
+    >
+      Dropdown Button
+    </button>
+  );
 };
 
 const DropdownMenu = ({ items }) => {
   return (
-    <ul>
+    <ul className="on">
       {items.map((item) => (
         <li key={item}>{item}</li>
       ))}
